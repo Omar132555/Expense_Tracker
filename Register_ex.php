@@ -1,7 +1,6 @@
 <?php
 require_once 'Connection.php';
 require 'vendor/autoload.php';
-require_once 'Functions.php';
 use Firebase\JWT\JWT;
 
 $username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
@@ -10,6 +9,10 @@ if(!$username || !$password) {
     echo "Username and password Format are inValid!";
     $error = true;
     exit;
+}
+else
+{
+    $error = false;
 }
 if(!$error)
 {
